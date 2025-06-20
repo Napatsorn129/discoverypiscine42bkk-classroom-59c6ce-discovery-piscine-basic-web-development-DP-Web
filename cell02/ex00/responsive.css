@@ -1,0 +1,42 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    background: #ffe4ec;
+}
+
+table {
+    width: 100vw;
+    height: 100vh;
+    border-collapse: collapse;
+    background: #fff0f6;
+    font-size: 1.2rem;
+}
+
+th, td {
+    border: 1px solid #d63384;
+    padding: 16px;
+    text-align: center;
+}
+
+th {
+    background: #f783ac;
+    color: #fff;
+}
+
+@media (max-width: 600px) {
+    table, th, td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Boxes Table</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles to ensure full height and centering for the table */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Ensure body takes at least full viewport height */
+            background-color: #F0F4F8; /* A light background for contrast */
+        }
+        /* Basic table styling for borders and spacing */
+        table {
+            border-collapse: collapse; /* Collapse borders to avoid double lines */
+            width: 80%; /* Make the table take up 80% of its container width */
+            max-width: 600px; /* Limit max width for larger screens */
+            border-radius: 12px; /* Rounded corners for the table */
+            overflow: hidden; /* Ensures rounded corners apply to content within */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+        }
+        td {
+            padding: 2.5rem; /* Ample padding inside the cells */
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Lighter border for separation */
+        }
+    </style>
+</head>
+<body>
+    <!-- Main container for the table, centered on the page -->
+    <div class="p-4 w-full flex justify-center items-center">
+        <table>
+            <tbody>
+                <tr>
+                    <!-- First box: Vibrant Blue -->
+                    <td class="bg-blue-500 text-white font-semibold text-lg rounded-tl-lg md:rounded-bl-none">
+                        <p>the first box!</p>
+                        <p>Blue.</p>
+                    </td>
+                    <!-- Second box: Cheerful Yellow -->
+                    <td class="bg-yellow-400 text-gray-800 font-semibold text-lg rounded-tr-lg md:rounded-br-none">
+                        <p>the second one.</p>
+                        <p>Yellow!</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
