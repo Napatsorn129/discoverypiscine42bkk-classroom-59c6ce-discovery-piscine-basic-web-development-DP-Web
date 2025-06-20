@@ -1,0 +1,242 @@
+<!DOCTYPE html>  
+<html lang="th">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>โปรไฟล์</title>  
+    <style>  
+        body {  
+            font-family: monospace;  
+            margin: 0;  
+            padding: 0;  
+            background-color: #f5e4e4;/* สีพื้นหลังอ่อนๆ */  
+            color: #333;  
+        }  
+
+        /* แถบนำทาง (Navigation Bar) */  
+        .navbar {  
+            background-color: #333;  
+            overflow: hidden;  
+            position: sticky; /* ทำให้แถบนำทางอยู่กับที่ */  
+            top: 0;  
+            width: 100%;  
+            z-index: 1000; /* ให้แถบนำทางอยู่ด้านบนสุด */  
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);  
+            display: flex;  
+            justify-content: center; /* จัดให้อยู่ตรงกลาง */  
+            padding: 10px 0;  
+        }  
+
+        .navbar a {  
+            display: block;  
+            color: rgb(255, 255, 255);  
+            text-align: center;  
+            padding: 14px 20px;  
+            text-decoration: none;  
+            font-size: 20px;  
+            transition: background-color 0.3s ease;  
+        }  
+
+        .navbar a:hover {  
+            background-color: #575757;  
+        }  
+
+        /* โครงสร้างหลักของหน้า */  
+        .container {  
+            max-width: 900px;  
+            margin: 40px auto;  
+            padding: 20px;  
+            background-color: #ffffff;  
+            border-radius: 10px;  
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
+            line-height: 1.6;  
+        }  
+
+        /* สไตล์สำหรับแต่ละ Section */  
+        .section {  
+            margin-bottom: 40px;  
+            padding: 20px;  
+            border-bottom: 1px solid #eee;  
+        }  
+
+        .section:last-child {  
+            border-bottom: none; /* ไม่ต้องมีเส้นคั่นใน section สุดท้าย */  
+        }  
+
+        .section h2 {  
+            color: #5aaf75;  
+            font-size: 2em;  
+            margin-bottom: 15px;  
+            text-align: center;  
+        }  
+
+        /* Section 1: ข้อมูลทั่วไป */  
+        .section-1 {  
+            text-align: center;  
+        }  
+
+        .section-1 p {  
+            margin: 5px 0;  
+            font-size: 1.1em;  
+            color: #555;  
+        }  
+
+        .section-1 img {  
+            width: 250px;  
+            height: 250px;  
+            border-radius: 8px;  
+            object-fit: cover;  
+            margin-top: 20px;  
+            border: 3px solid #ddd;  
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+        }  
+
+        /* Section 2: ข้อมูลเกี่ยวกับสาขา */  
+        .section-2 h2 {  
+            margin-bottom: 20px;  
+        }  
+
+        .section-2 ul {  
+            list-style-type: disc;  
+            padding-left: 25px;  
+        }  
+
+        .section-2 li {  
+            margin-bottom: 10px;  
+        }  
+
+        /* Section 3: ติดต่อ */  
+        .contact-links {  
+            text-align: center;  
+            margin-top: 30px;  
+        }  
+
+        .contact-links a {  
+            display: inline-block;  
+            background-color: #f3d9f1; /* สีเขียวสำหรับปุ่มติดต่อ */  
+            color: rgb(79, 74, 74);  
+            padding: 15px 30px;  
+            border-radius: 30px;  
+            text-decoration: none;  
+            font-size: 1.2em;  
+            font-weight: bold;  
+            margin: 10px;  
+            transition: background-color 0.3s ease, transform 0.2s ease;  
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
+        }  
+
+        .contact-links a:hover {  
+            background-color: #218838;  
+            transform: translateY(-3px);  
+        }  
+
+        /* Responsive adjustments */  
+        @media (max-width: 768px) {  
+            .container {  
+                margin: 20px auto;  
+                padding: 15px;  
+            }  
+
+            .navbar a {  
+                font-size: 15px;  
+                padding: 10px 15px;  
+            }  
+
+            .section h2 {  
+                font-size: 1.8em;  
+            }  
+
+            .section-1 img {  
+                width: 200px;  
+                height: 200px;  
+            }  
+
+            .contact-links a {  
+                padding: 12px 25px;  
+                font-size: 1.1em;  
+            }  
+        }  
+
+        @media (max-width: 480px) {  
+            .navbar {  
+                flex-direction: column; /* แถบนำทางเป็นแนวตั้ง */  
+                padding: 5px 0;  
+            }  
+            .navbar a {  
+                padding: 10px;  
+                width: 100%;  
+                box-sizing: border-box; /* รวม padding ใน width */  
+            }  
+            .container {  
+                margin: 15px;  
+                padding: 10px;  
+            }  
+            .section h2 {  
+                font-size: 1.5em;  
+            }  
+            .section-1 img {  
+                width: 150px;  
+                height: 150px;  
+            }  
+        }  
+    </style>  
+</head>  
+<body>  
+    <div class="navbar">  
+        <a href="index.html">หน้าหลัก</a>  
+        <a href="#general-info">About</a>  
+        <a href="#personal-history">Experience</a>  
+        <a href="#contact-info">Contact</a>  
+    </div>  
+
+    <div class="container">  
+        <div class="section section-1" id="general-info">  
+            <h2>Napatsorn Khampan</h2>  
+            <p>Kitty</p>  
+            <p>Bachelor of Science in Industrial Education Program in Computer technology</p>  
+            <img src="img/IMG_7558.jpg" alt="Napatsorn Khampan">  
+        </div>  
+
+        <div class="section section-2" id="personal-history">  
+            <h2>My Personal History</h2>  
+            <ul>  
+                ประวัติส่วนตัว  
+                <li>ชื่อจริง : นางสาวนภัสสร คำปัน</li>  
+                <li> ชื่อเล่น : คริสตี้</li>  
+                <li>อายุ : 18</li>  
+                <li>วันเดือนปีเกิด : 29 มิถุนายน 2549</li>  
+            </ul>  
+            <ul>  
+                สถานศึกษา  
+                <li>สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง</li>  
+                <li>คณะครุศาสตร์อุตสาหกรรมและเทคโนโลยี</li>  
+                <li>ภาควิชาครุศาสตร์วิศวกรรม</li>  
+                <li>สาขาเทคโนโลยีคอมพิวเตอร์</li>  
+            </ul>  
+            <ul>  
+                กิจกรรมต่างๆ  
+                <li>รับหน้าที่เป็นพิธีกรในการแข่งขันบาสเกตบอลกระชับมิตรระหว่างโรงเรียนเกาะสมุยกับโรงเรียน Windfield International School</li>  
+                <li>นักกีฬาบาสเกตบอลหญิงตัวจริงของชั้นมัธยมศึกษาปี4/2 ในกิจกรรมการแข่งขันบาสเกตบอลประเพณี ระดับชั้นมัธยมศึกษาปีที่ 4 ครั้งที่ 1</li>  
+                <li>รับหน้าที่เป็นกรรมการกลางฝ่ายเชิญรางวัลในกิจกรรม“การแข่งขันกีฬาสีภายในลูกทะเลขาวเกมส์'66”  
+                    ร่วมเดินขบวนพาเหรดของคณะสีมุจลินท์ ในกิจกรรม“การแข่งขันกีฬาสีภายในลูกทะเลขาวเกมส์'66”  
+                </li>  
+                <li>นักกีฬากระโดดไกลรุ่นไม่เกิน 18ปี หญิงของคณะสีมุจลินท์ ในกิจกรรม“การแข่งขันกีฬาสีภายในลูกทะเลขาวเกมส์'66”</li>  
+                <li>ผู้ดูแลจัดทำเอกสารเกี่ยวกับสูตจิบัตรของนักกีฬาในแต่ละคณะสี เพื่อใช้สำหรับกิจกรรม“การแข่งขันกีฬาสีภายในลูกทะเลขาวเกมส์'66”</li>  
+                <li>เป็นตัวแทนนักเรียนร่วมเดินขบวนในงานกาชาด ประจำปี 2566 ฉลอง 30 ปี กิ่งกาชาด อ.เกาะสมุย “ร้อยดวงใจ ส่งต่อการให้ที่งดงาม” ณ บริเวณท่าเทียบเรือเกาะสมุย</li>  
+                <li>รับหน้าที่เป็นหัวหน้าฝ่ายขบวนพาเหรดของคณะสีราชพฤกษ์และร่วมเดินในขบวนพาเหรด ในกิจกรรม“การแข่งขันกีฬาสีภายในลูกทะเลขาวเกมส์'67”</li>  
+                <li>เข้าร่วมการแข่งขันกรีฑาอนุบาล นักเรียน นักศึกษา และประชาชน อำเภอเกาะสมุย ประจำปี 2567 รายการ 1500ม. รุ่นประชาชน หญิง</li>  
+            </ul>  
+        </div>  
+
+        <div class="section section-3" id="contact-info">  
+            <h2>Contact</h2>  
+            <div class="contact-links">  
+                <a href="Napatsornkhampan@gmail.com">Email</a>  
+                <a href="096-954-5290">Phone</a>  
+                <a href="https://www.instagram.com/karisss._/" target="_blank">instagram</a>  
+                <a href="https://web.facebook.com/napatsorn.khampan" target="_blank">Facebook</a>  
+            </div>  
+        </div>  
+    </div>  
+</body>  
+</html>

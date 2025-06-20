@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title> <!-- ชื่อแท็บนำทาง -->
+    <style>
+        body {
+            /* พื้นหลังไล่เฉดสี พาสเทลชมพู ฟ้า ม่วง จากบนลงล่าง */
+            background: linear-gradient(to bottom, #FFB6C1, #ADD8E6, #E6E6FA);
+            font-family: monospace;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh; /* ทำให้ body สูงเต็มหน้าจอเพื่อแสดง gradient */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* จัดให้เนื้อหาเริ่มต้นจากด้านบน */
+        }
+
+        .main-title {
+            color: white;
+            font-size: 96px; /* ขนาดตัวอักษร 72px */
+            text-align: center;
+            margin-top: 50px; /* ระยะห่างจากด้านบน */
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(151, 188, 255, 0.769); /* เพิ่มเงาให้ตัวหนังสืออ่านง่ายขึ้น */
+        }
+
+        .profile-container {
+            display: flex;
+            gap: 40px; /* ระยะห่างระหว่างรูปโปรไฟล์ */
+            flex-wrap: wrap; /* ให้รูปภาพขึ้นบรรทัดใหม่ได้เมื่อหน้าจอเล็ก */
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .profile-card {
+            background-color: rgba(255, 255, 255, 0.9); /* พื้นหลังโปร่งแสงเล็กน้อย */
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(151, 188, 255, 0.769); /* เงาที่ชัดเจนขึ้น */
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* เพิ่ม transition เมื่อ hover */
+            width: 280px; /* กำหนดความกว้างของการ์ด */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-10px); /* เลื่อนขึ้นเล็กน้อยเมื่อ hover */
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* เงาที่เข้มขึ้นเมื่อ hover */
+        }
+
+        .profile-card img {
+            width: 200px; /* ขนาดรูปภาพโปรไฟล์ */
+            height: 200px;
+            border-radius: 50%; /* ทำให้รูปภาพเป็นวงกลม */
+            object-fit: cover; /* ครอบคลุมพื้นที่รูปภาพ */
+            border: 5px solid #fff; /* ขอบสีขาวรอบรูปภาพ */
+            box-shadow: 0 4px 8px rgba(151, 188, 255, 0.769); /* เงาให้รูปภาพ */
+            margin-bottom: 25px;
+        }
+
+        .profile-card h3 {
+            margin: 0 0 15px 0;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .profile-card a {
+            display: inline-block; /* ทำให้ลิงก์มีขนาดพอดีกับข้อความ */
+            background-color: #007bff; /* สีปุ่มลิงก์ */
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .profile-card a:hover {
+            background-color: #0056b3; /* สีเข้มขึ้นเมื่อ hover */
+            transform: translateY(-2px); /* เลื่อนขึ้นเล็กน้อยเมื่อ hover */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 56px; /* ปรับขนาดชื่อเรื่องบนมือถือ */
+                margin-top: 30px;
+            }
+
+            .profile-container {
+                flex-direction: column; /* จัดเรียงโปรไฟล์เป็นแนวตั้งบนมือถือ */
+                gap: 30px;
+            }
+
+            .profile-card {
+                width: 90%; /* ปรับความกว้างการ์ดบนมือถือ */
+                max-width: 300px; /* กำหนดความกว้างสูงสุด */
+            }
+
+            .profile-card img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 48px;
+            }
+
+            .profile-card {
+                padding: 20px;
+            }
+            .profile-card h3 {
+                font-size: 1.5em;
+            }
+            .profile-card a {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="main-title">Portfolio</h1>
+
+    <div class="profile-container">
+        <!-- การ์ดโปรไฟล์ที่ 1 -->
+        <div class="profile-card">
+            <img src="img/IMG_7558.jpg" alt="รูปโปรไฟล์สมาชิก 1">
+            <h3>Napatsorn Khampan</h3>
+            <a href="member1.html">ดูโปรไฟล์</a>
+        </div>
+
+        <!-- การ์ดโปรไฟล์ที่ 2 -->
+        <div class="profile-card">
+            <img src="img/IMG_7647.PNG" alt="รูปโปรไฟล์สมาชิก 2">
+            <h3>Pinthira Khamsopa</h3>
+            <a href="member2.html">ดูโปรไฟล์</a>
+        </div>
+    </div>
+</body>
+</html>
